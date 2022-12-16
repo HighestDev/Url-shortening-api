@@ -5,14 +5,16 @@ import colors from './Colors.styled';
  export const BaseContentContainer=styled.div`
  background-color:${colors.baseBg};
  margin-top:8em;
- height:180vh;
+ height:auto;
 
  @media (min-width:320px) and (max-width:623px){
-   height:350vh;
+   height:auto;
  }
-
+@media(min-width:320px) and (max-width:625px){
+  height:auto;
+}
  @media (min-width:703px) and (max-width:768px){
-  height:320vh;
+  height:auto;
  }
  `;
 
@@ -21,12 +23,22 @@ import colors from './Colors.styled';
   justify-content:space-between;
   max-width:1110px;
   margin:0 auto;
+  margin-bottom:15rem;
 
   @media (min-width:320px) and (max-width:623px){
     position:relative;
     top:0rem;
     flex-direction:column;
     left:10rem;
+    margin-bottom:15rem;
+  }
+
+  @media(min-width:375px) and (max-width:625px){
+    margin-bottom:15rem;
+  }
+
+  @media(min-width:425px) and (max-width:625px){
+    margin-bottom:20rem;
   }
 
   //  Tablet screen largescreen
@@ -35,6 +47,7 @@ import colors from './Colors.styled';
     position:relative;
     left:10rem;
     z-index:1;
+    margin-bottom:20rem;
   }
 
  `;
@@ -120,8 +133,9 @@ border-radius:10px;
 
  @media (min-width:320px) and (max-width:623px){
    width:250px;
-   height:50vh;
+   height:45vh;
    padding:10px;
+   
   
 
    >h3{
@@ -142,6 +156,7 @@ border-radius:10px;
   //    mobile screen medium
 @media (min-width:375px) and (max-width:623px){
   width:310px; 
+  margin-bottom:25px;
   
 
   >p{
@@ -160,6 +175,16 @@ border-radius:10px;
  @media (min-width:703px) and (max-width:768px){
   width:400px;
   margin-bottom:55px;
+  >h3{
+    position:relative;
+    left:0.8rem;
+  }
+  >p{
+    width:300px;
+    position:relative;
+    left:1.5rem;
+  }
+
  }
  `
 

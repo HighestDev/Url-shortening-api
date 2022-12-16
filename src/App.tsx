@@ -5,7 +5,7 @@ import colors from './Styles/Colors.styled';
 
 
 
-const App:React.FC=()=>{
+const App=()=>{
   return(
     <ThemeProvider theme={colors}>
      <LandingPage/>

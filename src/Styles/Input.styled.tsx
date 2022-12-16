@@ -78,8 +78,6 @@ font-weight: 600;
     // color:${colors.darkAsh};
     font-weight:100;
     font-size:15px;
-
-
 }
 
 
@@ -190,6 +188,7 @@ border-radius:10px;
  height:33vh;
  max-width:280px;
  font-size:13px;
+ margin-bottom:25px;
 
  }
 
@@ -197,10 +196,12 @@ border-radius:10px;
  position:relative;
  top:2.5rem;
  max-width:300px;
+ margin-bottom:30px;
  }
 
  @media (min-width:425px) and (max-width:623px){
   max-width:350px;
+  margin-bottom:30px;
  }
 
 //  Tablet screen largescreen

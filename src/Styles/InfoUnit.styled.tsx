@@ -17,9 +17,6 @@ margin-top:5rem;
    
  }
 
-
-
-
 `;
 
 export const DetailedLeftSection=styled.div`

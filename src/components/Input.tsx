@@ -3,49 +3,45 @@ import { ButtonInput, ContainerResult, FormContainer, InputContent, ResultData, 
 import axios from 'axios'
 import ShortLink from './ShortLink'
 import { GetShortenLinkTypes } from '../model'
+import getLocalStorage from './LocalStorage'
 
 
 
-// const baseURL='https://api.shrtco.de/v2/shorten?url='
-// const getStoredLinks=()=>{
-//   let links=JSON.parse(localStorage.getItem("links")) 
-//   if(links){
-//     return JSON.parse(localStorage.getItem("links"))
-//   }else{
-//     return []
-//   }
-// }
 
 
 
-function Input() {
-  const [text,setText]=useState<string>("")
-  const [links,setLink]=useState<GetShortenLinkTypes[]>([])
-  const [showData,setShowData]=useState<boolean>(false)
-  const [error,setError]=useState<string>("")
-  const [redBorder,setRedBorder]=useState<boolean>(false)
+function Input(){
+  const [input,setInput]=useState("")
+  const [link,setLink]=useState<GetShortenLinkTypes[]>(getLocalStorage())
 
 
 
-  const handleOnChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
-    setText(e.target.value)
-  }
+ // const [showData,setShowData]=useState(false)
+ const [showData,setShowData]=useState(true) 
+ const [error,setError]=useState("")
+  const [redBorder,setRedBorder]=useState(false)
+
+
+  useEffect(()=>{
+    localStorage.setItem("link",JSON.stringify(link))
+},[link])
 
 
   const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
-    if(!text){
+    if(!input){
       setShowData(false)
       setRedBorder(true)
       setError('Please Enter a link')
       console.log('Please add a text')
     }
+
     else{
       setShowData(true)
       const getData=async()=>{
-         const {data} = await axios.get(`https://api.shrtco.de/v2/shorten?url=${text}`)
-         setLink([...links,data])
-         setText('')
+         const {data} = await axios.get(`https://api.shrtco.de/v2/shorten?url=${input}`)
+         setLink([...link,data])
+         setInput('')
          setError('')
          setRedBorder(false)
          console.log(data)
@@ -53,49 +49,56 @@ function Input() {
 
       getData()
     }
+
   }
 
-  // useEffect(()=>{
-  //    localStorage.setItem("links",JSON.stringify(links))
-  // },[links])
+
+  const handleOnChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+    setInput(e.target.value)
+  }
+
 
 
   const InputSection=(
-    <ContainerResult>
-    <FormContainer onSubmit={handleSubmit}>
-    <InputContent>
-    <SearchInput type="text" className={redBorder ?'redBorder':'default'} placeholder='Shorten a link here......' value={text} 
-    onChange={handleOnChange}/>
+        <ContainerResult>
+          <FormContainer onSubmit={handleSubmit}>
+          <InputContent>
+          <SearchInput type="text" className={redBorder ?'redBorder':'default'} placeholder='Shorten a link here......' value={input} 
+          onChange={handleOnChange}/>
 
 
-    <ButtonInput>Shorten it!</ButtonInput> 
-       <ErrorMessage>{error}</ErrorMessage>
-    </InputContent>
-    </FormContainer>
+          <ButtonInput>Shorten it!</ButtonInput> 
+            <ErrorMessage>{error}</ErrorMessage>
+          </InputContent>
+          </FormContainer>
       
-      {showData &&(
-        <ResultData>
-          <>
-           {links.map((link)=>(
-            <ShortLink result={link.result}/>
-           ))}
-          </>
-        </ResultData>
-      )}
+          {showData &&(
+            <ResultData>
+              <>
+              {link.map((item)=>(
+                <ShortLink result={item.result}/>
+              ))}
+              </>
+            </ResultData>
+          )}
  
 
   </ContainerResult>
   )
 
 
+
+
+
+
   return (
-    <div>
-      {InputSection}
-   
-    </div>
-    )
+   <div>
+    {InputSection}
+   </div>
+ )
+
 }
 
+
+
 export default Input
-
-

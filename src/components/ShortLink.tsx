@@ -14,7 +14,7 @@ const ShortLink:React.FC<Iprops> =({result})=> {
     navigator.clipboard.writeText(result.full_share_link)
     setCopy('Copied!')
     setColor(true)
-    console.log('on fire!!!')
+    console.log('Copied!')
   }
 
   return (

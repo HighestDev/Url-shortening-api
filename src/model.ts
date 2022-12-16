@@ -1,9 +1,11 @@
 export interface CardTypes{
+  
 //   Titles
   title?:string,
   title1?:string,
   title2?:string,
 
+  
 // Base
    base?:string,
    base1?:string,
