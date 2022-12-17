@@ -23,6 +23,9 @@ export interface GetShortenLinkTypes{
     full_short_link2:string,
     short_link2:string,
     full_share_link:string,
+    share_link:string,
+    short_link:string,
+    short_link3:string
     
   }
 }

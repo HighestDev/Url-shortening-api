@@ -11,7 +11,7 @@ const ShortLink:React.FC<Iprops> =({result})=> {
   const [color,setColor]=useState<boolean>(false)
 
   const copyClip=()=>{
-    navigator.clipboard.writeText(result.full_share_link)
+    navigator.clipboard.writeText(result.short_link)
     setCopy('Copied!')
     setColor(true)
     console.log('Copied!')
