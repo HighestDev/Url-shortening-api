@@ -17,6 +17,7 @@ function Input(){
 
 
  // const [showData,setShowData]=useState(false)
+
  const [showData,setShowData]=useState(true) 
  const [error,setError]=useState("")
   const [redBorder,setRedBorder]=useState(false)
@@ -81,7 +82,6 @@ function Input(){
               </>
             </ResultData>
           )}
- 
 
   </ContainerResult>
   )
