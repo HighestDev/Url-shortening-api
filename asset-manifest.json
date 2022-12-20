@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Url-shortening-app/static/css/main.79f527b8.css",
-    "main.js": "/Url-shortening-app/static/js/main.36651752.js",
+    "main.css": "/Url-shortening-app/static/css/main.d6ea7a2f.css",
+    "main.js": "/Url-shortening-app/static/js/main.eccaac2e.js",
     "static/js/787.d51d02a5.chunk.js": "/Url-shortening-app/static/js/787.d51d02a5.chunk.js",
     "static/media/edited-footer.svg": "/Url-shortening-app/static/media/edited-footer.8bd469cfb3990e664597034d506e6e2c.svg",
     "static/media/icon-fully-customizable.svg": "/Url-shortening-app/static/media/icon-fully-customizable.a1532a74fa781f6fde327313bd5ffce3.svg",
@@ -9,12 +9,12 @@
     "static/media/icon-detailed-records.svg": "/Url-shortening-app/static/media/icon-detailed-records.265c8aea77b546e08ba3575f6a8a9f70.svg",
     "index.html": "/Url-shortening-app/index.html",
     "static/media/bg-shorten-desktop.svg": "/Url-shortening-app/static/media/bg-shorten-desktop.0d9742f433f4b0d8752b40ccf28727af.svg",
-    "main.79f527b8.css.map": "/Url-shortening-app/static/css/main.79f527b8.css.map",
-    "main.36651752.js.map": "/Url-shortening-app/static/js/main.36651752.js.map",
+    "main.d6ea7a2f.css.map": "/Url-shortening-app/static/css/main.d6ea7a2f.css.map",
+    "main.eccaac2e.js.map": "/Url-shortening-app/static/js/main.eccaac2e.js.map",
     "787.d51d02a5.chunk.js.map": "/Url-shortening-app/static/js/787.d51d02a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.79f527b8.css",
-    "static/js/main.36651752.js"
+    "static/css/main.d6ea7a2f.css",
+    "static/js/main.eccaac2e.js"
   ]
 }
