@@ -276,21 +276,27 @@ export const CopiedButton=styled.button`
 
 export const ErrorMessage=styled.p`
  position:absolute;
- font-size:13px;
+ font-size:15px;
  color:${colors.redText};
- left:-30rem;
+ left:-35rem;
  top:7.5rem;
  width:100vw;
- font-style:italic;
-
+font-style:italic;
  @media (min-width:320px) and (max-width:623px){
-   left:-2rem;
-   font-size:13px;
+   left:-5rem;
+   font-size:14px;
    top:6.7rem;
  }
 
+ @media (min-width:375px) and (max-width:623px){
+  left:-6rem;
+  font-size:14px;
+  top:6.7rem;
+}
+
  @media (min-width:425px) and (max-width:623px){
   top:6.6rem;
+  left:-8rem;
  }
 
 
@@ -303,3 +309,34 @@ export const ErrorMessage=styled.p`
  }
 
 `;
+
+export const PlaceHolder=styled.div`
+position:absolute;
+top:47.2em;
+left:18em;
+font-size:14px;
+z-index:50;
+color:${colors.darkAsh};
+
+@media (min-width:320px) and (max-width:623px){
+  left:3.5rem;
+  top:51rem;
+}
+
+@media (min-width:375px) and (max-width:623px){
+  left:3.5rem;
+  top:55.5rem;
+}
+
+@media (min-width:425px) and (max-width:623px){
+ top:61.5rem;
+ left:4.5rem;
+}
+
+
+@media (min-width:703px) and (max-width:768px){
+  left:6.5rem;
+  top:41rem;
+}
+
+`

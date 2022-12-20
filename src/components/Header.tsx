@@ -5,9 +5,9 @@ import {MenuOutlined} from '@ant-design/icons'
 
 
 function Header() {
- const [open,setOpen]=useState<boolean>(false) 
+ const [open,setOpen]=useState(false) 
  
- const showModal=():void=>{
+ const showModal=()=>{
     setOpen((prevState)=>(!prevState))
  }
 
@@ -51,9 +51,9 @@ function Header() {
   </HeaderContent>
  )
 
-  return (
-     headerContent
-  )
+   
+   return headerContent
+  
 }
 
 export default Header

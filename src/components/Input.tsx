@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import { ButtonInput, ContainerResult, FormContainer, InputContent, ResultData, SearchInput,ErrorMessage } from '../Styles/Input.styled'
+import { ButtonInput, ContainerResult, FormContainer, InputContent, ResultData, SearchInput,ErrorMessage, PlaceHolder } from '../Styles/Input.styled'
 import axios from 'axios'
 import ShortLink from './ShortLink'
 import { GetShortenLinkTypes } from '../model'
@@ -14,13 +14,12 @@ function Input(){
   const [input,setInput]=useState("")
   const [link,setLink]=useState<GetShortenLinkTypes[]>(getLocalStorage())
 
-
-
- // const [showData,setShowData]=useState(false)
-
  const [showData,setShowData]=useState(true) 
  const [error,setError]=useState("")
-  const [redBorder,setRedBorder]=useState(false)
+ const [redBorder,setRedBorder]=useState(false)
+ const [warn,setWarn]=useState(false)
+ const [placeHolder,setPlaceHolder]=useState('Shorten a link here....')
+
 
 
   useEffect(()=>{
@@ -28,12 +27,14 @@ function Input(){
 },[link])
 
 
+
   const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
     if(!input){
       setShowData(false)
       setRedBorder(true)
-      setError('Please Enter a link')
+      setWarn(true)
+      setError('Please add a  link')
       console.log('Please add a text')
     }
 
@@ -45,6 +46,7 @@ function Input(){
          setInput('')
          setError('')
          setRedBorder(false)
+         setWarn(false)
          console.log(data)
       }
 
@@ -56,6 +58,7 @@ function Input(){
 
   const handleOnChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
     setInput(e.target.value)
+    setPlaceHolder('')
   }
 
 
@@ -64,9 +67,10 @@ function Input(){
         <ContainerResult>
           <FormContainer onSubmit={handleSubmit}>
           <InputContent>
-          <SearchInput type="text" className={redBorder ?'redBorder':'default'} placeholder='Shorten a link here......' value={input} 
+          <SearchInput type="text"  className={redBorder ?'redBorder':'default'}  value={input} 
           onChange={handleOnChange}/>
 
+       
 
           <ButtonInput>Shorten it!</ButtonInput> 
             <ErrorMessage>{error}</ErrorMessage>
@@ -82,14 +86,9 @@ function Input(){
               </>
             </ResultData>
           )}
-
+      <PlaceHolder className={warn ?'warning':''}>{placeHolder}</PlaceHolder>
   </ContainerResult>
   )
-
-
-
-
-
 
   return (
    <div>

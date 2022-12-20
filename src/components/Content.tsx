@@ -19,8 +19,6 @@ function Content() {
           base1:"Gain insights into who is clicking your links. knowinig when and where people engage with your content helps inform better decisions",
           base2:"Imporve brands awareness and content discoverability through customizable links, superchanging audience engagement.",
           Image:''
-   
-
         }
     ]
 
@@ -32,14 +30,13 @@ const writting=(
 
 )
 
-const result=information.map((info,i)=>{
+const result=information.map((info)=>{
     return(
         <StatsContent>
 
         <BrandedContent>
         
             <SubContent
-            key={i*2}
             title={info.title}
             base={info.base}
             Image={brandIcon}
@@ -48,7 +45,6 @@ const result=information.map((info,i)=>{
 
         <DetailedContent>
         <SubContent
-            key={i*3}
             title={info.title1}
             base={info.base1}
             Image={detailedIcon}
@@ -57,11 +53,11 @@ const result=information.map((info,i)=>{
 
         <CustomizedContent>
         <SubContent
-           key={i*5}
             title={info.title2}
             base={info.base2}
             Image={customizeIcon}
            />
+
         </CustomizedContent>
 
       
@@ -75,15 +71,14 @@ const result=information.map((info,i)=>{
 
 const bar=(
   <div className='bluebar'>
-
   </div>
 )
 
   return (
     <div>
-  {writting}
-  {result}
-  {bar}
+      {writting}
+      {result}
+      {bar}
   </div>
   )
 }

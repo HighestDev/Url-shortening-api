@@ -8,12 +8,18 @@
    
   }
 
+.warning{
+  color:red !important;
+}
+ 
+
   .redBorder {
     border:2px solid red!important;}
 
   .hovers :hover{
     background-color: red !important;
     cursor: pointer; }
+
 
   
 
@@ -109,6 +115,7 @@
       left:1rem;
      }
 
+  
 
      .bluebar{
       position: relative;

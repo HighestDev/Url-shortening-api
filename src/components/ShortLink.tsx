@@ -7,15 +7,16 @@ import {GetShortenLinkTypes as  Iprops } from '../model'
 
 
 const ShortLink:React.FC<Iprops> =({result})=> {
-  const [copy,setCopy]=useState<string>('Copy')
-  const [color,setColor]=useState<boolean>(false)
+  const [copy,setCopy]=useState('Copy')
+  const [color,setColor]=useState(false)
 
   const copyClip=()=>{
     navigator.clipboard.writeText(result.short_link)
     setCopy('Copied!')
     setColor(true)
     console.log('Copied!')
-  }
+}
+
 
   return (
     <ContainerForResult>
