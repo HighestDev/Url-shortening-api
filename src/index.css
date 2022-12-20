@@ -9,12 +9,12 @@
   }
 
 .warning{
-  color:red !important;
+  color:#ff4758 !important;
 }
  
 
   .redBorder {
-    border:2px solid red!important;}
+    border:3px solid #ff4758 !important;}
 
   .hovers :hover{
     background-color: red !important;

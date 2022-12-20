@@ -277,7 +277,7 @@ export const CopiedButton=styled.button`
 export const ErrorMessage=styled.p`
  position:absolute;
  font-size:15px;
- color:${colors.redText};
+ color:#ff4758;
  left:-35rem;
  top:7.5rem;
  width:100vw;
