@@ -47,6 +47,7 @@ function Input(){
          setError('')
          setRedBorder(false)
          setWarn(false)
+         setPlaceHolder('Shorten a link here....')
          console.log(data)
       }
 
