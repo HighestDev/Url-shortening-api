@@ -21,6 +21,8 @@ function Input(){
  const [placeHolder,setPlaceHolder]=useState('Shorten a link here....')
 
 
+ const orderLinks=[...link].sort((a:any,b:any)=>a.code - b.code ? 1 : -1)
+
 
   useEffect(()=>{
     localStorage.setItem("link",JSON.stringify(link))
@@ -42,7 +44,7 @@ function Input(){
       setShowData(true)
       const getData=async()=>{
          const {data} = await axios.get(`https://api.shrtco.de/v2/shorten?url=${input}`)
-         setLink([...link,data])
+         setLink([...orderLinks,data])
          setInput('')
          setError('')
          setRedBorder(false)
@@ -81,7 +83,7 @@ function Input(){
           {showData &&(
             <ResultData>
               <>
-              {link.map((item)=>(
+              {orderLinks.map((item)=>(
                 <ShortLink result={item.result}/>
               ))}
               </>

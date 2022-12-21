@@ -17,6 +17,7 @@ export interface CardTypes{
 
 export interface GetShortenLinkTypes{
   result:{
+    code:string,
     original_link:string,
     full_short_link:string,
     short_link:string
