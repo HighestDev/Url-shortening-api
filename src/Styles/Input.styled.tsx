@@ -214,18 +214,21 @@ border-radius:10px;
 
 export const SubContainerResult=styled.div`
  display:flex;
- >p{
+ >a{
   position:relative;
   left:-5rem;
   top:0.5rem;
   color:${colors.seaBlue}
+ }
+ a:hover{
+  color:blue;
  }
 
  //Mobile Screen Small Size
  @media (min-width:320px) and (max-width:623px){
   flex-direction:column;
 
-  >p{
+  >a{
     left:2rem;
     top:-1rem;
   }
@@ -285,17 +288,17 @@ font-style:italic;
  @media (min-width:320px) and (max-width:623px){
    left:-5rem;
    font-size:14px;
-   top:6.7rem;
+   top:7rem;
  }
 
  @media (min-width:375px) and (max-width:623px){
   left:-6rem;
   font-size:14px;
-  top:6.7rem;
+  top:6.8rem;
 }
 
  @media (min-width:425px) and (max-width:623px){
-  top:6.6rem;
+  top:7rem;
   left:-8rem;
  }
 
@@ -325,18 +328,18 @@ color:${colors.darkAsh};
 
 @media (min-width:375px) and (max-width:623px){
   left:3.5rem;
-  top:55.5rem;
+  top:55.3rem;
 }
 
 @media (min-width:425px) and (max-width:623px){
- top:61.5rem;
+ top:60.9rem;
  left:4.5rem;
 }
 
 
 @media (min-width:703px) and (max-width:768px){
   left:6.5rem;
-  top:41rem;
+  top:40.9rem;
 }
 
 `

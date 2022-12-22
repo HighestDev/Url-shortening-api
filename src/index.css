@@ -119,9 +119,9 @@
 
      .bluebar{
       position: relative;
-      left:-10.5rem;
-      width:200vw;
-      top:-50rem;
+      left:-13.5rem;
+      width:230vw;
+      top:-35rem;
       transform: rotate(90deg);
      }
     
@@ -131,7 +131,10 @@
  @media (min-width:375px) and (max-width:623px){
 
   .bluebar{
+    width:200vw;
+    top:-35.5rem; 
     left:-11.5rem;}
+    
 
   .stats{
     padding-top:-6rem;
@@ -153,7 +156,9 @@
     }
 
     .bluebar{
-      left:-13rem;
+      top:-40rem;
+      width:170vw;
+      left:-9rem;
       
     }
 }
